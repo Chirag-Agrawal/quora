@@ -1,0 +1,27 @@
+.left_widget {
+  margin-left: 0px;
+  width: 490px;
+  height: 650px;
+  margin-top: 0px;
+  padding: 20px;
+  border-right: 1px solid gray;
+}
+.group {
+  margin-left: 300px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.group_logo {
+  font-size: 20px;
+  padding: 20px;
+}
+.group_name {
+  font-size: 15px;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 7px;
+}
+.group:hover {
+  background-color: gray;
+}
