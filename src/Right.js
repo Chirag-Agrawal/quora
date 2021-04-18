@@ -1,13 +1,27 @@
+import React, {useState, useEffect} from 'react';
 import { Avatar } from '@material-ui/core'
-import React, {useState, useEffect} from 'react'
-import './Left.css';
+import './Right.css'
 
-function Left({userId}) {
+/*
+const groups = [
+    {
+        name: 'group_name',
+        text: '300 Followers'
+    },
+    {
+        name: 'group_name2',
+        text: '350 Followers'
+    }
+]*/
+
+
+
+function Right({userId}) {
 
     const [groups, setGroups] = useState([])
 
     const fetchGroups =  () => {
-         fetch('http://localhost:3000/followinggroups', {
+         fetch('http://localhost:3000/groupstofollow', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -28,7 +42,7 @@ function Left({userId}) {
     }, [])
 
     return (
-        <div className="left_widget">
+         <div className="right_widget">
             {
                 groups.map((group) => {
                     const {group_name} = group;
@@ -39,7 +53,7 @@ function Left({userId}) {
                             </div>
                             <div className="group_name">
                                  <p>{group_name}</p>
-                             
+                            
                             </div>
                         </div>
                     )
@@ -49,4 +63,4 @@ function Left({userId}) {
     )
 }
 
-export default Left
+export default Right

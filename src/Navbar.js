@@ -2,11 +2,11 @@ import React from 'react';
 import './Navbar.css';
 import HomeIcon from '@material-ui/icons/Home';
 
-function Navbar() {
+function Navbar({onRouteChange, name}) {
     return (
         <div className="navbar">
             <div className="logo">
-               <p>Quora</p> 
+               <p>J.K Lakshmipat University</p> 
             </div>
             <div className="input">
                 <input className="inputBar" type="text" placeholder="Search Quora" />
@@ -15,9 +15,11 @@ function Navbar() {
                 <a className="link" href="https://www.quora.com/">
                     <HomeIcon />
                 </a>
+                <a className="link" href="https://www.quora.com/">Add Question</a>
                 <a className="link" href="https://www.quora.com/">Spaces</a>
                 <a className="link" href="https://www.quora.com/">Answer</a>
-                <a className="link" href="https://www.quora.com/">Notifications</a>
+                <a className="link" href="https://www.quora.com/">{name}</a>
+                <p className="link"  onClick={() => onRouteChange('signout')}>Logout</p>
             </div>
         </div>
     )

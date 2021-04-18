@@ -1,10 +1,10 @@
-.left_widget {
-  margin-left: 0px;
+.right_widget {
+  margin-left: 1150px;
   width: 350px;
   height: 650px;
   margin-top: 0px;
   padding: 20px;
-  border-right: 1px solid gray;
+  border-left: 1px solid gray;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
