@@ -1,8 +1,31 @@
-import React from 'react'
+import React, {useState, useEffect }from 'react'
 import { Avatar } from '@material-ui/core'
 import './Question.css'
 
-function Question() {
+function Question({userId}) {
+        console.log(userId)
+        const [que, setQue] = useState([]);
+
+        const fetchQuestions = () => {
+            fetch('http://localhost:3000/getques' , {
+                method: 'post',
+                Headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    id: userId
+                })
+            })
+                .then(response => response.json())
+                .then((question) => {
+                    console.log(question)
+                }
+                )
+            
+        }
+
+        useEffect(() => {
+            fetchQuestions()
+        }, [])
+
     return (
         <div className="question">
             <div className="add_question">
